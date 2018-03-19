@@ -12,13 +12,11 @@ public class PhoneValidator {
         System.out.print("+380");
         for(int i = 0; i < 9; i++){
             phoneDigitsArray[i] = input.nextInt();
-//            System.out.println(phoneDigitsArray[i]);
 
 
         }
 
         String prefix = String.valueOf(phoneDigitsArray[0]) + String.valueOf(phoneDigitsArray[1]);
-        System.out.println(prefix);
         for(int i = 0; i < prefixArray .length; i++){
             if(prefixArray[i].equals(prefix)){
                 System.out.println("Great! Your phone number passed validation");
@@ -36,34 +34,38 @@ public class PhoneValidator {
             sum += phoneDigitsArray[i];
         }
         System.out.println(sum);
-        int sumResult = sum/ 10 + sum % 10;
-        System.out.println(sumResult);
-        switch(sumResult){
-            case 1: sumResult = 1;
+        while(sum/10 >= 1) {
+            int sumResult = sum / 10 + sum % 10;
+            sum=sumResult;
+            System.out.println(sum);
+        }
+
+        switch(sum){
+            case 1: sum = 1;
                 System.out.println("One");
                 break;
-            case 2: sumResult = 2;
+            case 2: sum = 2;
                 System.out.println("Two");
                 break;
-            case 3: sumResult = 3;
+            case 3: sum = 3;
                 System.out.println("Three");
                 break;
-            case 4: sumResult = 4;
+            case 4: sum = 4;
                 System.out.println("Four");
                 break;
-            case 5: sumResult = 5;
+            case 5: sum = 5;
                 System.out.println("Five");
                 break;
-            case 6: sumResult = 6;
+            case 6: sum = 6;
                 System.out.println("Six");
                 break;
-            case 7: sumResult = 7;
+            case 7: sum = 7;
                 System.out.println("Seven");
                 break;
-            case 8: sumResult = 8;
+            case 8: sum = 8;
                 System.out.println("Eight");
                 break;
-            case 9: sumResult = 9;
+            case 9: sum = 9;
                 System.out.println("Nine");
                 break;
 
